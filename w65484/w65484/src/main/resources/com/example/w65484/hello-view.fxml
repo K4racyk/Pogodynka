@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19"
+fx:controller="com.example.w65484.HelloController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <Label text="Data" />
+      <Label text="Temperatura" GridPane.columnIndex="1" />
+      <Label text="Ciśnienie" GridPane.columnIndex="2" />
+      <Label text="Prędkośc wiatru" GridPane.columnIndex="3" />
+      <DatePicker GridPane.rowIndex="1" fx:id="date" editable="false">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="temp">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="cisn">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" fx:id="wiatr">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label text="Data od" GridPane.rowIndex="2" />
+      <Label text="Data do" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Srednia" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <DatePicker GridPane.rowIndex="3" fx:id="dateFrom" editable="false">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="dateTo" editable="false">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <Label text="Tutaj obliczona średnia" GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="AvgBetween" />
+      <Label text="Data od" GridPane.rowIndex="4" />
+      <Label text="Data do" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text="min" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Label text="max" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <DatePicker GridPane.rowIndex="5" editable="false" fx:id="dateFromMinMax">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="5" editable="false" fx:id="dateToMinMax">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <Label text="Minimum" GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="min" />
+      <Label text="Maximum" GridPane.columnIndex="3" GridPane.rowIndex="5" fx:id="max" />
+      <Button mnemonicParsing="false" text="Dodaj" GridPane.columnIndex="4" GridPane.rowIndex="1" onAction="#addToDatebase" />
+      <Button mnemonicParsing="false" text="Średnia" GridPane.columnIndex="4" GridPane.rowIndex="3" onAction="#getAvg" />
+      <Button mnemonicParsing="false" text="Minmax" GridPane.columnIndex="4" GridPane.rowIndex="5" onAction="#getMinMax" />
+   </children>
+</GridPane>
